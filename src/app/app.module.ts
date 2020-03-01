@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 // Modules
 import { AngularFireModule } from "@angular/fire";
@@ -24,6 +24,7 @@ import { SidebarComponent } from "./shared/sidebar/sidebar.component";
 import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { environment } from "src/environments/environment";
+import { OrdenIngresoEgresoPipe } from './ingreso-egreso/orden-ingreso-egreso.pipe';
 
 @NgModule({
   declarations: [
@@ -36,12 +37,14 @@ import { environment } from "src/environments/environment";
     EstadisticaComponent,
     SidebarComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    OrdenIngresoEgresoPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
