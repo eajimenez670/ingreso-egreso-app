@@ -12,7 +12,7 @@ import {
   ActivarLoadingAction,
   DesactivarLoadingAction
 } from "../shared/ui.actions";
-import { SetUserAction } from "./auth.actions";
+import { SetUserAction, UnsetUserAction } from "./auth.actions";
 import { Subscription } from "rxjs";
 
 @Injectable({
@@ -99,6 +99,7 @@ export class AuthService {
 
   logOut() {
     this.afAuth.auth.signOut();
+    this.store.dispatch(new UnsetUserAction());
     this.router.navigate(["/login"]);
   }
 

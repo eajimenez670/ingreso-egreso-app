@@ -21,6 +21,11 @@ export function authReducer(
         }
       };
 
+    case fromActions.UNSET_USER:
+      return {
+        user: null
+      };
+
     default:
       return state;
   }

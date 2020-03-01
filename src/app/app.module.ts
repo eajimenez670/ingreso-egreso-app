@@ -7,6 +7,9 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 
+// Gráficas
+import { ChartsModule } from "ng2-charts";
+
 // NGRX
 import { StoreModule } from "@ngrx/store";
 import { appReducers } from "./app.reducer";
@@ -24,7 +27,7 @@ import { SidebarComponent } from "./shared/sidebar/sidebar.component";
 import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { environment } from "src/environments/environment";
-import { OrdenIngresoEgresoPipe } from './ingreso-egreso/orden-ingreso-egreso.pipe';
+import { OrdenIngresoEgresoPipe } from "./ingreso-egreso/orden-ingreso-egreso.pipe";
 
 @NgModule({
   declarations: [
@@ -45,6 +48,7 @@ import { OrdenIngresoEgresoPipe } from './ingreso-egreso/orden-ingreso-egreso.pi
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    ChartsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
